@@ -1,0 +1,39 @@
+class Sobrecarga
+    {
+        private int[] vector;
+      
+
+        public Sobrecarga()
+        {
+            this.vector = new int[5];
+
+        }
+
+        public void Cargar(){
+            for (int i = 0; i < vector.Length; i++)
+            {
+                Console.Write("Ingrese el valor : ");
+                vector[i] = int.Parse(Console.ReadLine());
+
+            }
+        }
+        public void Imprimir()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Valor del vector ...");
+            for (int i = 0; i < vector.Length; i++)
+            {
+                Console.Write(vector[i] + "\t");
+            }
+            Console.Read();
+        }
+        static void Main(string[] args)
+        {
+            Sobrecarga sobre = new Sobrecarga();
+            sobre.Cargar();
+            sobre.Imprimir();
+            Console.ReadKey();
+        }
+        
+    
+    }
