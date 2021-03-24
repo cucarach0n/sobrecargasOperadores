@@ -17,6 +17,15 @@ class Sobrecarga
 
             }
         }
+        public static Sobrecarga operator +(Sobrecarga V1, Sobrecarga V2)
+        {
+            Sobrecarga res = new Sobrecarga();
+            for (int i = 0; i < V1.vector.Length; i++)
+            {
+                res.vector[i] = V1.vector[i] + V2.vector[i];
+            }
+            return res;
+        }
         public void Imprimir()
         {
             Console.WriteLine();
@@ -29,9 +38,21 @@ class Sobrecarga
         }
         static void Main(string[] args)
         {
-            Sobrecarga sobre = new Sobrecarga();
-            sobre.Cargar();
-            sobre.Imprimir();
+            Sobrecarga S1 = new Sobrecarga();
+            Sobrecarga S2 = new Sobrecarga();
+            Sobrecarga SR;
+
+            Console.WriteLine("Vector 1");
+            S1.Cargar();
+            Console.WriteLine("Vector 2");
+            S2.Cargar();
+            
+            S1.Imprimir();
+            S2.Imprimir();
+            Console.WriteLine();
+            SR = S1 + S2;
+            Console.WriteLine("Vector resultante .... ");
+            SR.Imprimir();
             Console.ReadKey();
         }
         
